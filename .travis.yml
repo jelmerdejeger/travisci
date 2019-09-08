@@ -3,14 +3,14 @@ sudo: required
 services:
   - docker
 
-language: python
-
-script:
-  - python -m pytest -v
-
-after_success:
-  - sh .travis/deploy_dockerhub.sh
-  - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
-
-notifications:
-  slack: cicd-corp:dzYY3OOsirONb698ev6WXl9s
+jobs:
+  include:
+    - stage: unit tests
+      script: - python -m pytest -v
+    - stage: pushing docker image
+        sh .travis/deploy_dockerhub.sh
+    - stage: deploy to production (heroku)
+        test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
+    - stage: pushing notifications (slack)
+      notifications:
+        slack: cicd-corp:dzYY3OOsirONb698ev6WXl9s
