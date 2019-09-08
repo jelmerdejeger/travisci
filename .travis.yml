@@ -11,10 +11,11 @@ jobs:
       name: "Running unittests"
       script:
         - python -m pytest -v
-    - stage: "Deploying image"
+    - stage: "pushing image"
       name: "Pushing image to DockerHub"
       script:
         - sh .travis/deploy_dockerhub.sh
+    - stage: "pushing image"
       name: "Pushing image to Heroku"
       script:
         - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
