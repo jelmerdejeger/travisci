@@ -1,12 +1,12 @@
 from __future__ import print_function
 import random
 
-buzz = ('continuous testing', 'continuous integration',
-    'continuous deployment', 'continuous improvement', 'devops')
-adjectives = ('complete', 'modern', 'self-service', 'integrated', 'end-to-end')
-adverbs = ('remarkably', 'enormously', 'substantially', 'significantly',
+buzz = ('constante verandering', 'constante integraties',
+    'constante verbetering', 'super interressante', 'devops')
+adjectives = ('super', 'geniaal', 'ongelovelijke', 'sterke', 'insane')
+adverbs = ('gigantische', 'behoorlijke', 'substantiele', 'significante',
     'seriously')
-verbs = ('accelerates', 'improves', 'enhances', 'revamps', 'boosts')
+verbs = ('verbeterd', 'vergroot', 'verbreed', 'ontdekt', 'super')
 
 def sample(l, n = 1):
     result = random.sample(l, n)

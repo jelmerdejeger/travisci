@@ -11,3 +11,6 @@ script:
 after_success:
   - sh .travis/deploy_dockerhub.sh
   - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
+  
+notifications:
+  slack: cicd-corp:dzYY3OOsirONb698ev6WXl9s
