@@ -5,7 +5,7 @@ buzz = ('constante verandering', 'constante integraties',
     'constante verbetering', 'super interressante', 'devops')
 adjectives = ('super', 'geniaal', 'ongelovelijke', 'sterke', 'insane')
 adverbs = ('gigantische', 'behoorlijke', 'substantiele', 'significante',
-    'seriously')
+    'serieus')
 verbs = ('verbeterd', 'vergroot', 'verbreed', 'ontdekt', 'super')
 
 def sample(l, n = 1):
