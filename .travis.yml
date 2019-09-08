@@ -9,15 +9,8 @@ script:
   - python -m pytest -v
 
 after_success:
-  jobs:
-    include:
-      - stage: build docker image
-      - sh .travis/deploy_dockerhub.sh
-      - stage: test
-      - script: docker run --rm $DOCKER_USERNAME/cicd:latest cat hello.txt
-      - script: docker run --rm $DOCKER_USERNAME/cicd:latest cat hello.txt
-
+  - sh .travis/deploy_dockerhub.sh
   - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
-  
+
 notifications:
   slack: cicd-corp:dzYY3OOsirONb698ev6WXl9s
