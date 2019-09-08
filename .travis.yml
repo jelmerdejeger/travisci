@@ -8,13 +8,14 @@ language: python
 jobs:
   include:
     - stage: "Adding pytest"
-      name: "Adding Pystest"
+      name: "Running unittests"
       script:
         - python -m pytest -v
-    - stage: "pushing image"
-      name: "Pushing image to DockerHub" 
+    - stage: "pushing image to DockerHub"
+      name: "Pushing image to DockerHub"
       script:
         - sh .travis/deploy_dockerhub.sh
+    - stage: "pushing image to Heroku"
       name: "Pushing image to Heroku"
       script:
         - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
